@@ -1,0 +1,56 @@
+Q4.Write a program to show Compile time polymorphism in java?
+
+
+
+
+ANSWER:
+
+
+
+Certainly! Here's an example program that demonstrates compile-time polymorphism (method overloading) in Java:
+
+```java
+public class PolymorphismExample {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        PolymorphismExample example = new PolymorphismExample();
+        
+        int result1 = example.add(5, 10);
+        System.out.println("Result 1: " + result1); // Output: Result 1: 15
+        
+        int result2 = example.add(2, 4, 6);
+        System.out.println("Result 2: " + result2); // Output: Result 2: 12
+        
+        double result3 = example.add(3.5, 4.2);
+        System.out.println("Result 3: " + result3); // Output: Result 3: 7.7
+    }
+}
+```
+
+Output:
+```
+Result 1: 15
+Result 2: 12
+Result 3: 7.7
+```
+
+In the above program, we have a class `PolymorphismExample` that defines multiple methods with the same name (`add`) but different parameter lists. This is an example of method overloading, which is a form of compile-time polymorphism.
+
+- The first `add` method accepts two integers and returns their sum.
+- The second `add` method accepts three integers and returns their sum.
+- The third `add` method accepts two doubles and returns their sum.
+
+In the `main` method, we create an instance of the `PolymorphismExample` class and call each version of the `add` method with different arguments. The appropriate overloaded method is selected at compile-time based on the argument types.
+
+This example demonstrates how method overloading allows multiple methods with the same name but different parameter lists to coexist in a class. The appropriate method to be called is determined at compile-time based on the arguments passed to the method.

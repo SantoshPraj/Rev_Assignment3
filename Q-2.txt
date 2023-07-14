@@ -1,0 +1,56 @@
+Q2. Write a Program where you inherit method from parent class and show method Overridden Concept?
+
+
+
+ANSWER:
+
+
+Here's an example program that demonstrates inheritance and method overriding in Java:
+
+```java
+class Vehicle {
+    public void drive() {
+        System.out.println("Driving a vehicle...");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    public void drive() {
+        System.out.println("Driving a car...");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle();
+        vehicle.drive(); // Output: Driving a vehicle...
+
+        Car car = new Car();
+        car.drive(); // Output: Driving a car...
+
+        // Polymorphic behavior
+        Vehicle polymorphicVehicle = new Car();
+        polymorphicVehicle.drive(); // Output: Driving a car...
+    }
+}
+```
+
+Output:
+```
+Driving a vehicle...
+Driving a car...
+Driving a car...
+```
+
+In the above program, we have a parent class `Vehicle` and a child class `Car` that inherits from `Vehicle`. The `Vehicle` class has a `drive()` method that is overridden in the `Car` class.
+
+- The `drive()` method in the `Vehicle` class prints "Driving a vehicle...".
+- In the `Car` class, we use the `@Override` annotation to indicate that we are overriding the `drive()` method from the parent class. The overridden method in the `Car` class prints "Driving a car...".
+
+In the `main` method:
+- We create an instance of the `Vehicle` class and call the `drive()` method. This calls the method defined in the `Vehicle` class and prints "Driving a vehicle...".
+- We create an instance of the `Car` class and call the `drive()` method. This calls the overridden method in the `Car` class and prints "Driving a car...".
+- We demonstrate polymorphic behavior by assigning an instance of `Car` to a variable of type `Vehicle`. When we call the `drive()` method on the `polymorphicVehicle`, it still calls the overridden method in the `Car` class and prints "Driving a car...".
+
+This example showcases how method overriding allows a subclass to provide its implementation of a method inherited from the parent class, enabling more specific behavior for the subclass.

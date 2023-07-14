@@ -1,0 +1,68 @@
+Q3.Write a program to show run time polymorphism in java?
+
+
+
+ANSWER:
+
+
+
+Certainly! Here's an example program that demonstrates runtime polymorphism in Java:
+
+```java
+class Animal {
+    public void makeSound() {
+        System.out.println("The animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The dog barks.");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("The cat meows.");
+    }
+}
+
+public class PolymorphismExample {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.makeSound(); // Output: The animal makes a sound.
+
+        Dog dog = new Dog();
+        dog.makeSound(); // Output: The dog barks.
+
+        Cat cat = new Cat();
+        cat.makeSound(); // Output: The cat meows.
+
+        // Polymorphic behavior
+        Animal polymorphicAnimal = new Dog();
+        polymorphicAnimal.makeSound(); // Output: The dog barks.
+
+        polymorphicAnimal = new Cat();
+        polymorphicAnimal.makeSound(); // Output: The cat meows.
+    }
+}
+```
+
+Output:
+```
+The animal makes a sound.
+The dog barks.
+The cat meows.
+The dog barks.
+The cat meows.
+```
+
+In the above program, we have a parent class `Animal` and two child classes `Dog` and `Cat`. Each class has a `makeSound()` method, and the child classes override the method with their specific sound.
+
+In the `main` method:
+- We create instances of the classes `Animal`, `Dog`, and `Cat` and call the `makeSound()` method on each instance. This calls the respective overridden method in each class and prints the corresponding sound.
+- We demonstrate runtime polymorphism by assigning instances of the child classes to variables of the parent class type. When we call the `makeSound()` method on the `polymorphicAnimal` variable, it calls the overridden method based on the actual type of the object it refers to. This allows us to achieve polymorphic behavior, where the method implementation is determined dynamically at runtime.
+
+This example illustrates how runtime polymorphism allows different objects of related classes to be treated as objects of the parent class type, providing flexibility and extensibility in the code.

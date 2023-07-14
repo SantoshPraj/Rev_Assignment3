@@ -1,0 +1,51 @@
+Q9.What is an abstraction explained with an Example?
+
+
+
+
+ANSWER:
+
+
+Abstraction is a fundamental concept in object-oriented programming that involves representing essential features and behaviors while hiding unnecessary details. It allows you to focus on the high-level understanding of objects and their interactions without being concerned about the specific implementation.
+
+Here's an example to illustrate abstraction in Java:
+
+```java
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    void draw() {
+        System.out.println("Drawing a rectangle.");
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        circle.draw(); // Output: Drawing a circle.
+
+        Shape rectangle = new Rectangle();
+        rectangle.draw(); // Output: Drawing a rectangle.
+    }
+}
+```
+
+In this example, we have an abstract class `Shape` that represents a generic shape. It declares an abstract method `draw()` without providing any implementation. By making the class `Shape` abstract, we enforce that it cannot be instantiated directly, but it can be extended by concrete subclasses.
+
+The `Circle` and `Rectangle` classes extend the `Shape` class and provide their specific implementation of the `draw()` method. They override the abstract method and define how to draw a circle and rectangle, respectively.
+
+In the `main` method, we create instances of `Circle` and `Rectangle`, but they are assigned to variables of the abstract type `Shape`. This is possible because of polymorphism and the concept of programming to an abstraction. We can call the `draw()` method on these objects, and the appropriate implementation from the concrete subclass is executed based on the actual object type.
+
+The key point here is that the `Shape` abstract class defines the common behavior (the `draw()` method) for all shapes, but the specific implementation details are left to the concrete subclasses. The abstract class serves as an abstraction, allowing us to work with shapes in a general way without concerning ourselves with the specific implementation of each shape.
+
+Abstraction helps in building modular and extensible systems, providing a clear separation between the interface (abstract class or interface) and its implementations. It allows for code reusability, flexibility, and the ability to work with objects at a higher level of abstraction.

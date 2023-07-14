@@ -1,0 +1,24 @@
+Q10.What is the final class in Java?
+
+
+
+
+ANSWER:
+
+
+
+In Java, a final class is a class that cannot be inherited or subclassed by other classes. Once a class is declared as final, it cannot be extended further. This is achieved by using the `final` keyword in the class declaration.
+
+Here are some key points regarding final classes in Java:
+
+1. Inheritance Restriction: A final class is used to prevent other classes from extending it. It ensures that the final class cannot serve as a superclass for any other class.
+
+2. Method Overriding Restriction: In a final class, methods can be declared as final as well, preventing further overriding by subclasses. However, it's important to note that a final method is not a requirement for a final class. The final keyword applies only to the class itself, not its methods or members.
+
+3. Design Intent: Declaring a class as final is often a design choice made when the class is intended to be used as-is without any further modification or extension. It provides a level of control over the class's behavior and prevents unexpected changes by subclassing.
+
+4. Efficiency and Security: Final classes may offer performance benefits in certain cases, as the compiler can make optimizations based on the assumption that the class will not be subclassed. Additionally, final classes can help in maintaining security and integrity, as the behavior of the class is fixed and cannot be altered by subclasses.
+
+5. Examples of Final Classes: Some examples of final classes in Java include `java.lang.String`, `java.lang.Integer`, and `java.lang.Math`. These classes are designed to be immutable and have predefined behavior that should not be modified by subclasses.
+
+It's important to note that while a class can be declared as final, its methods and variables may or may not be final themselves. The final keyword can be used independently for methods and variables within a class, even if the class itself is not declared as final.

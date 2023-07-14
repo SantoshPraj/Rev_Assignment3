@@ -1,0 +1,76 @@
+Q1.Write a simple Banking System program by using OOPs concept where you can get account Holder name balance etc?
+
+
+
+
+ANSWER:
+
+
+
+
+Here's a simple example of a banking system program using object-oriented programming (OOP) concepts in Java:
+
+```java
+public class BankAccount {
+    private String accountHolderName;
+    private double balance;
+
+    public BankAccount(String accountHolderName, double initialBalance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = initialBalance;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Amount deposited: " + amount);
+    }
+
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Amount withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("John Doe", 1000.0);
+        System.out.println("Account Holder Name: " + account.getAccountHolderName());
+        System.out.println("Current Balance: " + account.getBalance());
+
+        account.deposit(500.0);
+        account.withdraw(200.0);
+
+        System.out.println("Updated Balance: " + account.getBalance());
+    }
+}
+```
+
+Output:
+```
+Account Holder Name: John Doe
+Current Balance: 1000.0
+Amount deposited: 500.0
+Amount withdrawn: 200.0
+Updated Balance: 1300.0
+```
+
+In the above program, the `BankAccount` class represents a bank account. It has private instance variables `accountHolderName` and `balance`, along with methods to interact with the account:
+
+- The constructor is used to initialize the account holder name and initial balance.
+- The `getAccountHolderName()` and `getBalance()` methods provide access to the account holder name and balance, respectively.
+- The `deposit()` method is used to deposit an amount into the account.
+- The `withdraw()` method is used to withdraw an amount from the account, considering the available balance.
+
+In the `main` method, an instance of the `BankAccount` class is created with an account holder name and an initial balance. The account holder name and current balance are displayed. Then, a deposit of 500 and a withdrawal of 200 are made, followed by printing the updated balance.
+
+This program demonstrates the basic functionality of a bank account, allowing you to retrieve the account holder name, check the balance, deposit funds, and withdraw funds.
